@@ -4,16 +4,19 @@ package javasorts;
 import java.util.Scanner;
 
 public class InsertionSort {
-    private static void 
-        insert(int array[],int i){
+    public static long compara=0,deslocamento=0;
+    private static void insert(int array[],int i){
         int eleito = array[i];
         int comp = i-1;
         while(comp>=0 && 
                 eleito<array[comp]){
+           compara++;   
         // deslocar
            array[comp+1] = array[comp];//deslocando
+           deslocamento++;
            comp--;
         }// fim while
+        compara++; // conta a comparacao de saida
        // inserindo o eleito na posicao correta 
        array[comp+1] = eleito;
     }// fim insert

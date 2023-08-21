@@ -3,12 +3,15 @@ package javasorts;
 import java.util.Scanner;
 
 public class SelectionSort {
-    private static int 
-        indexMinArray(int array[], int posAtual){
+    public static long compara=0,trocas=0;
+
+    private static int indexMinArray(int array[], int posAtual){
        int k = posAtual; // k é o indice do menor
-       for(int i=posAtual+1;i<array.length;i++)
+       for(int i=posAtual+1;i<array.length;i++){
+           compara++;
            if(array[i]<array[k])
                k = i;
+       }// fim for    
        return k; // indice do menor valor
     }// fim indexMinArray
 //----------------------------------     
@@ -16,6 +19,7 @@ public class SelectionSort {
          for(int i=0;i<array.length-1;i++){
              int k = indexMinArray(array, i);
              // trocar valores de i com k
+             trocas++;
              int temp = array[i];
              array[i] = array[k];
              array[k] = temp;

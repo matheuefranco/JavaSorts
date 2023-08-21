@@ -4,11 +4,14 @@ package javasorts;
 import java.util.Scanner;
 
 public class BubbleSort {
+    public static long compara=0,trocas=0;
     
     public static void bSort(int array[]){
      for(int fase=1;fase<array.length;fase++){
         for(int comp=0;comp<array.length-fase;comp++){
-           if(array[comp]>array[comp+1]){
+            compara++; // contando comparacoes
+            if(array[comp]>array[comp+1]){
+              trocas++; // contrando trocas  
               int temp = array[comp];
               array[comp] = array[comp+1];
               array[comp+1] = temp;
