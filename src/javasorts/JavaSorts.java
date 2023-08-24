@@ -60,13 +60,17 @@ public class JavaSorts {
                         System.out.println("Encontrado");
                     else
                         System.out.println("Inexistente");
+                    System.out.println("Comparacoes busca linear:"+ 
+                                         Search.compLinear);
             break;
             case 6: System.out.println("Valor:");
                     valorBusca=scanner.nextInt();
-                    if(Search.buscaBinaria(vetor, valorBusca))
+                    if(Search.buscaBinariaComentado(vetor, valorBusca))
                         System.out.println("Encontrado");
                     else
-                        System.out.println("Inexistente");        
+                        System.out.println("Inexistente"); 
+                    System.out.println("Comparacoes busca binaria:"+ 
+                                         Search.compBinaria);
             break;
             case 0: System.out.println("Saindo");
         }// fim switch
@@ -110,6 +114,13 @@ public class JavaSorts {
     
     public static void printArray(int array[]){
           for(int i=0;i<array.length;i++)
+              System.out.print(array[i]+"| ");
+          
+          System.out.println("\n");
+    }// fim printArray
+    
+    public static void printIntervalo(int array[], int ini, int fim){
+          for(int i=ini;i<=fim;i++)
               System.out.print(array[i]+"| ");
           
           System.out.println("\n");
